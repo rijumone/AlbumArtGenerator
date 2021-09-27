@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+        /* Container holding the image and the text */
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+ 
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .artist-text {
+            font-family: 'Bebas Neue', cursive;
+            width: 500px;
+            font-size: 30px;
+        }
+        </style>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>
+        
+    </head>
+    <body>
+        {# <div class="image">
+            <img class="img img-responsive full-width" src="{{ img_url}}"/>
+        </div> #}
+        <div class="container">
+            <img src="{{ img_url}}" class="img-responsive">
+            
+            <div class="centered artist-text" style="">{{ artist_name }}</div>
+        </div>
+    </body>
+</html>
