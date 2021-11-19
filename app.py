@@ -21,15 +21,17 @@ app = Flask(__name__)
 _ctr = 0
 @app.route("/")
 def hello_world():
-    return render_template(
-        'index.html',
-        album_font=get_rand_font(ALBUM_FONTS),
-        artist_font=get_rand_font(ARTIST_FONTS),
-        img_url=get_image_url(),
-        artist_name=get_artist_name(),
-        album_title=get_album_title(),
-    )
-    # return f'<img src="{get_image_url()}">'
+    try:
+        return render_template(
+            'index.html',
+            album_font=get_rand_font(ALBUM_FONTS),
+            artist_font=get_rand_font(ARTIST_FONTS),
+            img_url=get_image_url(),
+            artist_name=get_artist_name(),
+            album_title=get_album_title(),
+        )
+    except Exception as _e:
+        return render_template('500.html')
 
 
 def main():
@@ -92,7 +94,10 @@ def get_album_title():
     '''
     url = 'https://api.quotable.io/random'
     response = requests.request('GET', url)
-    return ' '.join(response.json()['content'].split(' ')[-6:]).title()
+    title = ' '.join(response.json()['content'].split(' ')[-6:]).title()
+    if title[-1] == '.':
+        title = title[:-1]
+    return title
 
 def resize_image(url, x=500, y=500, opacity=150):
     '''
