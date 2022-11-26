@@ -133,3 +133,5 @@ dmypy.json
 backtest_*.csv
 backtest_*.tar.xz
 NSE_*.csv
+
+static/*

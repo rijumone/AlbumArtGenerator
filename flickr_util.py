@@ -1,10 +1,11 @@
+import os
 import time
 from pprint import pprint
 import flickrapi
 import random
 
-api_key = u'd5b3dc0ea117d320c1bed0b7e15022d2'
-api_secret = u'42bb86e579f5d3d8'
+api_key = os.getenv('FLICKR_API')
+api_secret = os.getenv('FLICKR_SECRET')
 
 IMG_CATEGORIES = [
     'dogs',

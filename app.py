@@ -31,6 +31,7 @@ def hello_world():
             album_title=get_album_title(),
         )
     except Exception as _e:
+        print(_e)
         return render_template('500.html')
 
 
