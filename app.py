@@ -93,7 +93,7 @@ def get_album_title():
         for li in lis:
             return ' '.join(li.text.split(' ')[-6:]).strip()
     '''
-    url = 'https://api.quotable.io/random'
+    url = 'http://api.quotable.io/random'
     response = requests.request('GET', url)
     title = ' '.join(response.json()['content'].split(' ')[-6:]).title()
     if title[-1] == '.':

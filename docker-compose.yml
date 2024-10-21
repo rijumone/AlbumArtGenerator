@@ -1,0 +1,9 @@
+services:
+  album-art-generator:
+    build: .
+    container_name: album-art-generator
+    ports:
+      - 8101:5001
+    env_file:
+      - .env
+    restart: unless-stopped
